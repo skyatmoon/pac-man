@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX PAC-MAN GAME</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: blue;
+        }
+        h3 {
+            color: whitesmoke;
+        }
+        .menu {
+            margin-top: 50px;
+        }
+        .menu-item {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+        .menu-item:hover {
+            color: yellow;
+            cursor: pointer;
+        }
+        .pacman {
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            border-radius: 50%;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pacman::before {
+            content: '';
+            position: absolute;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+            animation: chomp 1.5s infinite alternate;
+        }
+
+        @keyframes chomp {
+            0% {
+                clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+            }
+            100% {
+                clip-path: polygon(50% 100%, 0% 50%, 50% 0%, 50% 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>APEX PAC-MAN GAME</h1>
+
+<div class="pacman"></div>
+
+<h3>Select a game level to play.</h3>
+
+<div class="menu">
+    <div id="level1" class="menu-item">Level - 1</div>
+    <div id="level2" class="menu-item">Level - 2</div>
+    <div id="level3" class="menu-item">Level - 3</div>
+    <button id="startGame" class="menu-item" disabled>Play</button>
+</div>
+<script src="js/start.js"></script>
+</body>
+</html>

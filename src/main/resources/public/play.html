@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX PAC-MAN GAME - Play</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        h1, h2 {
+            color: blue;
+        }
+        button {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+        button:hover {
+            color: yellow;
+            cursor: pointer;
+        }
+        #canvas {
+            border: 0.3vw solid blue;
+            background-color: black;
+            margin: 20px auto;
+            display: block;
+        }
+        .instructions {
+            margin-left: 2vw;
+            text-align: left;
+            color: white;
+        }
+        #json-box {
+            width: 20vw;
+            height: 20vw;
+            overflow: auto;
+            border: 0.3vw solid blue;
+            margin-top: 20px;
+        }
+        pre {
+            white-space: pre-wrap;       /* Since CSS 2.1 */
+            white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            margin: 0;
+        }
+    </style>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/view.js"></script>
+</head>
+
+<body>
+
+<h1>APEX PAC-MAN GAME - Play</h1>
+
+<div style="float:left;">
+    <canvas id="canvas" width="800" height="800"></canvas>
+</div>
+
+<div class="instructions" style="float:left;">
+    <h2>How to Play:</h2>
+    <p>1. Use "↑, ↓, ←, →" on your keyboard, feel free to play.<br>
+        2. Press "Start/Re-Start Game" to start the game.<br>
+        3. Press "Back to Homepage" to go back to the homepage to select level.<br>
+        4. Get 2400 points to win the game. Losing 3 lives will result in a game over.<br></p>
+
+    <button id="startGame">Start/Re-Start Game</button>
+    <button id="backHome">Back to Homepage</button>
+
+    <h2>JSON Output</h2>
+    <div id="json-box">
+        <pre id="json-output"></pre>
+    </div>
+</div>
+
+</body>
+</html>
